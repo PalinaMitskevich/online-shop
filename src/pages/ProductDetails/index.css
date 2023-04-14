@@ -1,0 +1,21 @@
+.product-details-container {
+    display: flex;
+    margin-top: 20px;
+}
+
+
+.slider-container {
+    min-height: 300px;
+}
+
+.description-container {
+  margin-left: 150px;
+}
+
+.title {
+    font-weight: bold;
+    font-size: 28px;
+}
+.description-container > p {
+    margin-bottom: 20px;
+}

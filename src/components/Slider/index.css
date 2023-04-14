@@ -1,0 +1,49 @@
+.container {
+    height: 100%;
+}
+
+.main-slide {
+    max-width: 600px;
+    height: 100%;
+    background-position: center;
+    background-size: cover;
+    position: relative;
+}
+
+
+
+.left-arrow-container {
+    position: absolute;
+    top: 40%;
+    left: -30px;
+}
+
+.right-arrow-container {
+    position: absolute;
+    top: 40%;
+    right: -30px;
+}
+
+.arrow {
+    color: black;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+}
+
+.slides-container {
+    display: flex;
+    margin-top: 50px;
+    max-width: 600px;
+}
+
+.slide {
+    width: 120px;
+    height: 60px;
+    margin-right: 20px;
+}
+
+.selected-slide {
+    border: 4px solid black;
+}
+

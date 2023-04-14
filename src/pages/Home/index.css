@@ -1,0 +1,29 @@
+.main-image {
+    position: relative;
+}
+
+.advert-image {
+    width: 100%;
+}
+
+.text-header {
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+}
+
+.button-header {
+    position: absolute;
+    top: 80%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.products-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    max-width: 80%;
+    margin: 30px auto;
+}
