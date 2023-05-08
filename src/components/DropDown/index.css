@@ -1,0 +1,20 @@
+.dropdown-container {
+    position: relative;
+    min-width: 115px;
+}
+
+.dropdown-header {
+    cursor: pointer;
+
+}
+
+.dropdown-list {
+    position: absolute;
+    max-height: 100px;
+    overflow-y: scroll;
+
+}
+
+.rt {
+    display: flex;
+}

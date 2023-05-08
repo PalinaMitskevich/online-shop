@@ -9,6 +9,7 @@ export const Home = () => {
   const products = useSelector((state: RootState) => state.products.value)
   const searchInputValue = useSelector((state: RootState) => state.products.searchInputValue)
   const sort = useSelector((state: RootState) => state.products.sort)
+  const filter = useSelector((state: RootState) => state.products.filter)
 
   return (
     <div>
@@ -32,6 +33,19 @@ export const Home = () => {
               return productBrand.includes(searchInputValue)
                 || productCategory.includes(searchInputValue)
                 || productTitle.includes(searchInputValue)
+            })
+            .filter(({category, brand}) => {
+              if(filter.categories.length === 0 && filter.brands.length === 0) return true
+
+              if(filter.brands.length === 0) {
+                return filter.categories.includes(category)
+              }
+
+              if(filter.categories.length === 0) {
+                return filter.brands.includes(brand)
+              }
+
+              return filter.categories.includes(category) && filter.brands.includes(brand)
             })
             .sort((a, b) => {
               if (sort.price === 'asc') return a.price - b.price

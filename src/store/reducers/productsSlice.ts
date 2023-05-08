@@ -9,8 +9,8 @@ export interface ProductsState {
     rate: 'asc' | 'desc' | '',
   }
   filter: {
-    categories: string,
-    brands: string,
+    categories: Array<string>,
+    brands: Array<string>,
   }
 }
 
@@ -22,8 +22,8 @@ const initialState: ProductsState = {
     rate: '',
   },
   filter: {
-    categories: '',
-    brands: '',
+    categories: [],
+    brands: [],
   }
 
 }
@@ -40,10 +40,25 @@ export const productsSlice = createSlice({
     },
     setSort: (state, action: PayloadAction<ProductsState["sort"]>) => {
       state.sort = action.payload
-    }
+    },
+    setFilterCategories: (state, action: PayloadAction<string>) => {
+      if(state.filter.categories.includes(action.payload)) {
+        state.filter.categories = state.filter.categories.filter((category) => category !== action.payload)
+      } else {
+        state.filter.categories.push(action.payload)
+      }
+    },
+    setFilterBrands: (state, action: PayloadAction<string>) => {
+      if(state.filter.brands.includes(action.payload)) {
+        state.filter.brands = state.filter.brands.filter((brand) => brand !== action.payload)
+      } else {
+        state.filter.brands.push(action.payload)
+      }
+    },
+
   },
 })
 
-export const { setValue, setSearchInputValue, setSort } = productsSlice.actions
+export const { setValue, setSearchInputValue, setSort, setFilterCategories, setFilterBrands } = productsSlice.actions
 
 export default productsSlice.reducer
